@@ -44,50 +44,66 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 const aElements = document.querySelectorAll('nav a')
-
-aElements.forEach((elem, i) => {
-    let value = Object.values(siteContent.nav)[i]
-    aElements[i].textContent = value
+let count = 0
+aElements.forEach(elem => {
+    let value = Object.values(siteContent.nav)[count]
+    aElements[count].textContent = value
+    count++
 })
 
 
+
+
+
+// const aElements = document.querySelectorAll('a')
+
+// for (let i = 0; i < aElements.length; i++) {
+//     let value = Object.values(siteContent.nav)[i]
+//     aElements[i].textContent = value
+// }
 
 const h1_tag = document.querySelector('.cta-text h1')
-h1_tag.textContent = siteContent.cta.h1
+h1_tag.textContent = siteContent.cta['h1']
 
-const button_element = document.querySelector('.cta-text button')
-button_element.textContent = siteContent.cta.button
 
-button_element.addEventListener('click', function() {
-    button_element.style.color = 'pink'
-})
+const button = document.querySelector('.cta-text button')
+button.textContent = siteContent.cta['button']
 
-const top_img = document.getElementById('cta-img')
-top_img.src = siteContent.cta["img-src"]
+
+const imgHeader = document.getElementById('cta-img')
+imgHeader.src = siteContent.cta["img-src"]
 
 const text_section = document.querySelectorAll('.text-content h4')
+
 text_section[0].textContent = siteContent["main-content"]["features-h4"]
 text_section[1].textContent = siteContent["main-content"]["about-h4"]
 text_section[2].textContent = siteContent["main-content"]["services-h4"]
 text_section[3].textContent = siteContent["main-content"]["product-h4"]
 text_section[4].textContent = siteContent["main-content"]["vision-h4"]
 
-const para_section = document.querySelectorAll('.text-content p')
-para_section[0].textContent = siteContent["main-content"]["features-content"]
-para_section[1].textContent = siteContent["main-content"]["about-content"]
-para_section[2].textContent = siteContent["main-content"]["services-content"]
-para_section[3].textContent = siteContent["main-content"]["product-content"]
-para_section[4].textContent = siteContent["main-content"]["vision-content"]
+const features_content = document.querySelector('.text-content p')
+features_content.textContent = siteContent["main-content"]["features-content"]
+
+
+const about_Content = document.querySelectorAll('.text-content p')[1]
+about_Content.textContent = siteContent["main-content"]["about-content"]
 
 const middle_img = document.getElementById('middle-img')
 middle_img.src = siteContent["main-content"]["middle-img-src"]
+
+const bottom_content = document.querySelectorAll('.bottom-content .text-content p')
+bottom_content[0].textContent = siteContent["main-content"]["services-content"]
+bottom_content[1].textContent = siteContent["main-content"]["product-content"]
+bottom_content[2].textContent = siteContent["main-content"]["about-content"]
+
+
 
 const contactH4 = document.querySelector('.contact h4');
 contactH4.innerText = siteContent["contact"]["contact-h4"];
 
 const contact = document.querySelectorAll('.contact p');
 const arr = Object.values(siteContent["contact"]);
-arr.splice(0, 1)
+arr.shift();
 
 for (let i = 0; i < contact.length; i++) {
     contact[i].innerText = arr[i];
@@ -100,8 +116,18 @@ for (let i = 0; i < aElements.length; i++) {
 }
 
 
+// const Hellllo_Worlllld = document.createElement("a");
+// const Javascript = document.createElement("a");
+// Hellllo_Worlllld.innerText = 'Hellllo-Worlllld';
+// Javascript.innerText = 'Javascript';
+// aElements[0].parentNode.appendChild(Hellllo_Worlllld)
+// aElements[0].parentNode.prepend(Javascript)
+// Hellllo_Worlllld.style.color = 'green'
+// Javascript.style.color = 'green'
 
 
+
+let nav = document.getElementsByTagName('nav')
 
 
 
